@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Weert Gilders
   m_EditorClassIdentifier: 
   presidentName: Weert Gilders
-  homeCountry: {fileID: 0}
+  homeCountry: {fileID: 11400000, guid: 17aca4760a5070f46a4afe28642220fe, type: 2}
   presidentPortrait: {fileID: 0}
