@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    Rigidbody body;
+
     [SerializeField]
     float moveSpeed;
 
@@ -13,14 +15,21 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 Velocity { get { return moveDirection * moveSpeed; } }
 
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         GetInput();
+
     }
 
     private void FixedUpdate()
     {
-        Move(Time.fixedDeltaTime);
+        Move();
+        Debug.Log(body.velocity.magnitude);
     }
 
     void GetInput()
@@ -29,12 +38,12 @@ public class PlayerController : MonoBehaviour
         if (moveDirection.magnitude > 1) moveDirection = moveDirection.normalized;
     }
 
-    private void Move(float deltaTime)
+    private void Move()
     {
-        transform.position += Velocity * deltaTime;
+        body.velocity = moveDirection * moveSpeed;
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         PhysicsObjectSuper physicsObject = collision.gameObject.GetComponent<PhysicsObjectSuper>();
         if (physicsObject) physicsObject.CollideWith(this);
