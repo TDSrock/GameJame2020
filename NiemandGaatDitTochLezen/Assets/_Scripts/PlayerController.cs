@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody body;
 
     [SerializeField]
-    float moveSpeed;
+    float moveSpeed = 5;
 
     [HideInInspector]
     public Vector3 moveDirection;

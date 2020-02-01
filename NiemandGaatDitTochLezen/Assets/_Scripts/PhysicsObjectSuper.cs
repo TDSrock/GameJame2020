@@ -4,21 +4,44 @@ using UnityEngine;
 
 public class PhysicsObjectSuper : MonoBehaviour
 {
+    private enum Weight
+    {
+        light,
+        medium,
+        heavy
+    }
+
     [SerializeField]
-    float speedThreshold;
+    Weight objectWeight;
+
+    [SerializeField]
+    float speedThreshold = 0;
 
     [SerializeField]
     Vector3 velocity;
 
     Rigidbody body;
 
-    float maxSpeed;
+    float weightScale = 1;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody>();
-    }
 
+        switch (objectWeight)
+        {
+            case Weight.light:
+                weightScale = 3;
+                return;
+            case Weight.medium:
+                weightScale = 1;
+                return;
+            case Weight.heavy:
+                weightScale = 0.5f;
+                return;
+        }
+    }
+    
     public virtual void FixedUpdate()
     {
         if (velocity.magnitude > 0)
@@ -35,9 +58,8 @@ public class PhysicsObjectSuper : MonoBehaviour
         Debug.Log(player.Velocity.magnitude);
         if (player.Velocity.magnitude > speedThreshold)
         {
-            //velocity = player.Velocity;
             Vector3 direction = (transform.transform.position - player.transform.position).normalized;
-            velocity = direction * player.Velocity.magnitude * 2;
+            velocity = direction * player.Velocity.magnitude * weightScale;
         }
 
         else if (player.Velocity.magnitude >= speedThreshold / 2)
