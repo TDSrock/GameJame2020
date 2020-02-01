@@ -2,21 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SjorsGielen.CustomVariables.ReferenceVariables;
+using SjorsGielen.UsefullScripts;
 
 abstract public class FrontViewSuper : MonoBehaviour, IInteractable
 {
+
     public Camera playerCamera;
+    protected SmartCameraFollow smartCameraFollow;
     public GameObject frontViewCameraLocation;
-    public CharacterController player;
+    public PlayerController player;
+    protected MeshRenderer playerRender;
 
     Vector3 cachedCameraPosition;
 
-    [Range(0, 1)]
     public FloatReference cameraLerpTime;
+
+    [Header("UI shit")]
+    [Tooltip("Is used for the text hint for the player")]
+    public string objectName;
 
     public void Start()
     {
-
+        smartCameraFollow = playerCamera.GetComponent<SmartCameraFollow>();
+        playerRender = player.GetComponent<MeshRenderer>();
     }
 
     public void OnInteract()
@@ -30,7 +38,10 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
         if (goal == frontViewCameraLocation.transform.position)
         {
             cachedCameraPosition = playerCamera.transform.position;
+            smartCameraFollow.enabled = false;
             player.enabled = false;//take away control from the character
+            playerRender.enabled = true;
+            player.interactionTextHint.gameObject.SetActive(false);
         }
         float timeLerping = 0;
         while (timeLerping <= cameraLerpTime)
@@ -44,10 +55,14 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
 
         if (goal != frontViewCameraLocation.transform.position)
         {
+            smartCameraFollow.enabled = true;
             player.enabled = true;
+            playerRender.enabled = true;
         }
         else
         {
+            smartCameraFollow.enabled = false;
+            playerRender.enabled = false;
             SetupInteraction();//afaik idk if this is going to be needed up whatever
         }
 
@@ -67,5 +82,18 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
     /// <summary>
     /// Function to remove anything setup bu the SetupInteraction function
     /// </summary>
-    abstract public void CloseInteraction();
+    virtual public void CloseInteraction()
+    {
+        OnStopInteract();
+    }
+
+    public Vector3 GetPosition()
+    {
+        return this.transform.position;
+    }
+
+    public virtual string GetObjectName()
+    {
+        return objectName;
+    }
 }
