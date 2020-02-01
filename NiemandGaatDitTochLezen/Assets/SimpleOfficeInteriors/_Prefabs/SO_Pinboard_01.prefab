@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 491690}
   - component: {fileID: 3324384}
   - component: {fileID: 2371312}
+  - component: {fileID: 1119707634303832951}
   m_Layer: 0
   m_Name: SO_Pinboard_01
   m_TagString: Untagged
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1119707634303832951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2446275, y: 3.1331077, z: 0.14408296}
+  m_Center: {x: -0.00000023841858, y: 1.5665538, z: 0.00000020861626}

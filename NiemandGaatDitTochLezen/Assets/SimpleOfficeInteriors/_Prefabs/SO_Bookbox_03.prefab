@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 414502}
   - component: {fileID: 3301326}
   - component: {fileID: 2330798}
+  - component: {fileID: 2808747129177755917}
+  - component: {fileID: 4452673822858638547}
   m_Layer: 0
   m_Name: SO_Bookbox_03
   m_TagString: Untagged
@@ -78,3 +80,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2808747129177755917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0182829, y: 0.66578484, z: 0.7285652}
+  m_Center: {x: -0.0025305748, y: 0.33289242, z: -0.0009059906}
+--- !u!54 &4452673822858638547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151470}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

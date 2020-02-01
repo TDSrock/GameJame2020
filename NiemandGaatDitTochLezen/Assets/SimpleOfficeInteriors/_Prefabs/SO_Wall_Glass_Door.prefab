@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 421162}
   - component: {fileID: 3313274}
   - component: {fileID: 2332498}
+  - component: {fileID: 5766784101949560184}
+  - component: {fileID: 1302859635086423668}
   m_Layer: 0
   m_Name: SO_Wall_Glass_Door
   m_TagString: Untagged
@@ -79,6 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5766784101949560184
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5060315, y: 4.6851273, z: 0.10975003}
+  m_Center: {x: -0.75301576, y: 2.0719004, z: -0.00000011920929}
+--- !u!65 &1302859635086423668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5409355, y: 4.6851273, z: 0.10975003}
+  m_Center: {x: -4.2295322, y: 2.0719004, z: -0.00000011920929}
 --- !u!1 &139204
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 481586}
   - component: {fileID: 3349974}
   - component: {fileID: 2389096}
+  - component: {fileID: 8380339720321695250}
+  - component: {fileID: 477118858713234330}
   m_Layer: 0
   m_Name: SO_CarboardBox_02
   m_TagString: Untagged
@@ -78,3 +80,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8380339720321695250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.73309255, y: 0.7635124, z: 0.9481149}
+  m_Center: {x: 0.038258076, y: 0.3817562, z: 0.10784352}
+--- !u!54 &477118858713234330
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129546}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
