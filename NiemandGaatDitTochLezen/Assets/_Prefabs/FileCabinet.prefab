@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8629167434508573368}
   - component: {fileID: 660793163436486032}
   - component: {fileID: 4355348206922821355}
+  - component: {fileID: 6487234991482342344}
   m_Layer: 0
   m_Name: FC_Top_FileCabinet
   m_TagString: Untagged
@@ -112,6 +113,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6487234991482342344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305945199600159392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.35279, y: 0.9200001, z: 0.92}
+  m_Center: {x: -0.160312, y: 2.5, z: 0}
 --- !u!1 &5882859691821262646
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +137,7 @@ GameObject:
   - component: {fileID: 7970660867915111766}
   - component: {fileID: 2619964964589609983}
   - component: {fileID: 421281531112880582}
+  - component: {fileID: 6123951451240143136}
   m_Layer: 0
   m_Name: FileCabinet_FC_Bot
   m_TagString: Untagged
@@ -190,6 +205,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6123951451240143136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882859691821262646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.35279, y: 0.91999996, z: 0.92}
+  m_Center: {x: -0.160312, y: 0.5, z: 0}
 --- !u!1 &8078248857091712990
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +229,7 @@ GameObject:
   - component: {fileID: 3222907370105195451}
   - component: {fileID: 4212425799606177125}
   - component: {fileID: 6903173233906642135}
+  - component: {fileID: 1023251507885004415}
   m_Layer: 0
   m_Name: FileCabinet_FC_Main
   m_TagString: Untagged
@@ -268,6 +297,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1023251507885004415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078248857091712990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &8127347612054434671
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +321,7 @@ GameObject:
   - component: {fileID: 3258154267706086978}
   - component: {fileID: 3764457591966217171}
   - component: {fileID: 3289718732809381511}
+  - component: {fileID: 542256104048098834}
   m_Layer: 0
   m_Name: FileCabinet_FC_Mid
   m_TagString: Untagged
@@ -346,3 +389,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &542256104048098834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127347612054434671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.35279, y: 0.9200001, z: 0.92}
+  m_Center: {x: -0.160312, y: 1.5, z: 0}
