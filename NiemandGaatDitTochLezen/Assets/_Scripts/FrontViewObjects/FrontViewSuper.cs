@@ -14,6 +14,7 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
     protected MeshRenderer playerRender;
 
     Vector3 cachedCameraPosition;
+    Quaternion cachedCameraRotation;
 
     public FloatReference cameraLerpTime;
 
@@ -30,34 +31,47 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         StopAllCoroutines();
-        StartCoroutine(MoveCamera(frontViewCameraLocation.transform.position));
+        StartCoroutine(MoveCamera(frontViewCameraLocation.transform.position, frontViewCameraLocation.transform.rotation));
     }
 
-    IEnumerator MoveCamera(Vector3 goal)
+    IEnumerator MoveCamera(Vector3 goalPos, Quaternion goalRot)
     {
-        if (goal == frontViewCameraLocation.transform.position)
+
+        if (goalPos == frontViewCameraLocation.transform.position)
         {
+            playerRender.enabled = false;
             cachedCameraPosition = playerCamera.transform.position;
+            cachedCameraRotation = playerCamera.transform.rotation;
             smartCameraFollow.enabled = false;
             player.enabled = false;//take away control from the character
-            playerRender.enabled = true;
             player.interactionTextHint.gameObject.SetActive(false);
+        }
+        else
+        {
+            playerRender.enabled = true;
         }
         float timeLerping = 0;
         while (timeLerping <= cameraLerpTime)
         {
-
-            playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, goal, timeLerping/cameraLerpTime);
+            Debug.Log(timeLerping);
             timeLerping += Time.deltaTime;
+            if (timeLerping != 0)
+            {
+                float percent = timeLerping / cameraLerpTime;
+                playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, goalPos, percent);
+                playerCamera.transform.rotation = Quaternion.Lerp(playerCamera.transform.rotation, goalRot, percent);
+            }
+
             yield return null;
         }
-        playerCamera.transform.position = goal;//hard set at goal location.
+        playerCamera.transform.position = goalPos;//hard set at goal location.
 
-        if (goal != frontViewCameraLocation.transform.position)
+        if (goalPos != frontViewCameraLocation.transform.position)
         {
             smartCameraFollow.enabled = true;
             player.enabled = true;
             playerRender.enabled = true;
+            player.interactionTextHint.gameObject.SetActive(true);
         }
         else
         {
@@ -71,7 +85,7 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
     public void OnStopInteract()
     {
         StopAllCoroutines();
-        StartCoroutine( MoveCamera(cachedCameraPosition));
+        StartCoroutine( MoveCamera(cachedCameraPosition, cachedCameraRotation));
     }
     
     /// <summary>

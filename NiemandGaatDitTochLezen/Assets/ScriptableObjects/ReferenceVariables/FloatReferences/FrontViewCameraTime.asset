@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e09bc46d51c5142a1856b8973674c6, type: 3}
   m_Name: FrontViewCameraTime
   m_EditorClassIdentifier: 
-  DeveloperDescription: 
-  value: 0
+  DeveloperDescription: The time it takes for the camera to lerp to all frontview
+    models
+  value: 0.2
