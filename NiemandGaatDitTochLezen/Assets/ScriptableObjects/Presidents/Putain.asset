@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Putain
   m_EditorClassIdentifier: 
   presidentName: Vlad Putain
+  homeCountry: {fileID: 11400000, guid: 087b908987ab9ab40af7ab5819881323, type: 2}
   presidentPortrait: {fileID: 0}

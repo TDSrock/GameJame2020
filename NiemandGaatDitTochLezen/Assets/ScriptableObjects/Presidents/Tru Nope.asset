@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tru Nope
   m_EditorClassIdentifier: 
   presidentName: Tru Nope
-  homeCountry: {fileID: 0}
+  homeCountry: {fileID: 11400000, guid: 6ba43f16ba6ea384a97cc71a2dee3edb, type: 2}
   presidentPortrait: {fileID: 0}
