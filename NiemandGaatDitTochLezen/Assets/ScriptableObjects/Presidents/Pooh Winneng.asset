@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Pooh Winneng
   m_EditorClassIdentifier: 
   presidentName: Poh Winneg
+  homeCountry: {fileID: 11400000, guid: 68bc876100adc9047b1c4e2adc800038, type: 2}
   presidentPortrait: {fileID: 0}
