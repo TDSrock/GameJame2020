@@ -19,9 +19,10 @@ public class PlayerController : MonoBehaviour
     public KeyCode interactionKey = KeyCode.E;
     [Header("Interactable UI")]
     public Text interactionTextHint;
-
+    Rigidbody rb;
 
     public List<IInteractable> interactables = new List<IInteractable>();
+
 
     private void Awake()
     {
@@ -30,7 +31,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (interactables.Count != 0)
+        rb.velocity = Vector3.zero;
+        if(interactables.Count != 0)
+
         {
             IInteractable closest = interactables.GetClostestsInteractable(this.transform.position);
             interactionTextHint.gameObject.SetActive(true);

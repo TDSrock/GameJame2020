@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 404838}
   - component: {fileID: 3319994}
   - component: {fileID: 2380946}
+  - component: {fileID: 7388017380706783687}
+  - component: {fileID: 5184861620399463221}
   m_Layer: 0
   m_Name: SO_Desk_04
   m_TagString: Untagged
@@ -78,3 +80,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7388017380706783687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4188527, y: 1.5389426, z: 4.0825434}
+  m_Center: {x: 1.3319407, y: 0.7694713, z: 0.00000047683716}
+--- !u!65 &5184861620399463221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9346921, y: 1.5116599, z: 1.5323372}
+  m_Center: {x: 0.07402098, y: 0.75582993, z: -1.2751026}
