@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        body = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Debug.Log(body.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
     void GetInput()
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        body.velocity = moveDirection * moveSpeed;
+        rb.velocity = moveDirection * moveSpeed;
     }
 
     private void OnCollisionEnter(Collision collision)
