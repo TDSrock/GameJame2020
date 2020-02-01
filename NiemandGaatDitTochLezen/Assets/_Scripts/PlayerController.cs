@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using SjorsGielen.CustomVariables.ReferenceVariables;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection;
     public KeyCode interactionKey = KeyCode.E;
     [Header("Interactable UI")]
-    public Text interactionTextHint;
+    public StringReference interactionTextHint;
 
 
     public List<IInteractable> interactables = new List<IInteractable>();
@@ -21,8 +21,7 @@ public class PlayerController : MonoBehaviour
         if(interactables.Count != 0)
         {
             IInteractable closest = interactables.GetClostestsInteractable(this.transform.position);
-            interactionTextHint.gameObject.SetActive(true);
-            interactionTextHint.text = string.Format("Press {0} to interact with {1}", interactionKey, closest.GetObjectName());
+            interactionTextHint.Value = string.Format("Press {0} to interact with {1}", interactionKey, closest.GetObjectName());
             if (Input.GetKeyUp(interactionKey))
             {
                 closest.OnInteract();
@@ -30,7 +29,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            interactionTextHint.gameObject.SetActive(false);
+            interactionTextHint.Value = "";
         }
         GetInput();
     }
@@ -55,7 +54,8 @@ public class PlayerController : MonoBehaviour
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable != null)
         {
-            interactables.Add(interactable);//add the interactable to the list
+            if(!interactables.Contains(interactable))
+                interactables.Add(interactable);//add the interactable to the list
         }
     }
 
