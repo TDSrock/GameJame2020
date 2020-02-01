@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,9 +9,29 @@ public class PlayerController : MonoBehaviour
     float moveSpeed;
 
     Vector3 moveDirection;
+    public KeyCode interactionKey = KeyCode.E;
+    [Header("Interactable UI")]
+    public Text interactionTextHint;
+
+
+    public List<IInteractable> interactables = new List<IInteractable>();
 
     void Update()
     {
+        if(interactables.Count != 0)
+        {
+            IInteractable closest = interactables.GetClostestsInteractable(this.transform.position);
+            interactionTextHint.gameObject.SetActive(true);
+            interactionTextHint.text = string.Format("Press {0} to interact with {1}", interactionKey, closest.GetObjectName());
+            if (Input.GetKeyUp(interactionKey))
+            {
+                closest.OnInteract();
+            }
+        }
+        else
+        {
+            interactionTextHint.gameObject.SetActive(false);
+        }
         GetInput();
     }
 
@@ -27,5 +48,23 @@ public class PlayerController : MonoBehaviour
     private void Move(float deltaTime)
     {
         transform.position += moveDirection * moveSpeed * deltaTime;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            interactables.Add(interactable);//add the interactable to the list
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            interactables.Remove(interactable);//remove the interactable from the list
+        }
     }
 }
