@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tonald Drump
   m_EditorClassIdentifier: 
   presidentName: Tonald Drump
-  homeCountry: {fileID: 0}
+  homeCountry: {fileID: 11400000, guid: 7f897fde3b8c05f46a9b0d9035c12dfb, type: 2}
   presidentPortrait: {fileID: 0}
