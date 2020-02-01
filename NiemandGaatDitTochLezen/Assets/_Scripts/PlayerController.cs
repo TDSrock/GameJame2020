@@ -7,7 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float moveSpeed;
 
-    Vector3 moveDirection;
+    [HideInInspector]
+    public Vector3 moveDirection;
+
+    [HideInInspector]
+    public Vector3 Velocity { get { return moveDirection * moveSpeed; } }
 
     void Update()
     {
@@ -21,11 +25,18 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        moveDirection = Vector3.Normalize(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")));
+        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (moveDirection.magnitude > 1) moveDirection = moveDirection.normalized;
     }
 
     private void Move(float deltaTime)
     {
-        transform.position += moveDirection * moveSpeed * deltaTime;
+        transform.position += Velocity * deltaTime;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        PhysicsObjectSuper physicsObject = collision.gameObject.GetComponent<PhysicsObjectSuper>();
+        if (physicsObject) physicsObject.CollideWith(this);
     }
 }
