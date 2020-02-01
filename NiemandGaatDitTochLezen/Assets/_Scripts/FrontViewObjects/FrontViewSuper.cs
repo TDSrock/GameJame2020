@@ -48,6 +48,7 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
         }
         else
         {
+            player.enabled = true;//if you can see the player you should be able to control the player, feels weird otherwise
             playerRender.enabled = true;
         }
         float timeLerping = 0;
@@ -69,7 +70,6 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
         if (goalPos != frontViewCameraLocation.transform.position)
         {
             smartCameraFollow.enabled = true;
-            player.enabled = true;
             playerRender.enabled = true;
             player.interactionTextHint.gameObject.SetActive(true);
         }
