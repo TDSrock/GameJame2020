@@ -5,10 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    float moveSpeed;
+    Rigidbody body;
 
-    Vector3 moveDirection;
+    [SerializeField]
+    float moveSpeed = 5;
+
+    [HideInInspector]
+    public Vector3 moveDirection;
+
+    [HideInInspector]
+    public Vector3 Velocity { get { return moveDirection * moveSpeed; } }
+
     public KeyCode interactionKey = KeyCode.E;
     [Header("Interactable UI")]
     public Text interactionTextHint;
@@ -16,9 +23,14 @@ public class PlayerController : MonoBehaviour
 
     public List<IInteractable> interactables = new List<IInteractable>();
 
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
-        if(interactables.Count != 0)
+        if (interactables.Count != 0)
         {
             IInteractable closest = interactables.GetClostestsInteractable(this.transform.position);
             interactionTextHint.gameObject.SetActive(true);
@@ -33,21 +45,30 @@ public class PlayerController : MonoBehaviour
             interactionTextHint.gameObject.SetActive(false);
         }
         GetInput();
+
     }
 
     private void FixedUpdate()
     {
-        Move(Time.fixedDeltaTime);
+        Move();
+        Debug.Log(body.velocity.magnitude);
     }
 
     void GetInput()
     {
-        moveDirection = Vector3.Normalize(new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")));
+        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (moveDirection.magnitude > 1) moveDirection = moveDirection.normalized;
     }
 
-    private void Move(float deltaTime)
+    private void Move()
     {
-        transform.position += moveDirection * moveSpeed * deltaTime;
+        body.velocity = moveDirection * moveSpeed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        PhysicsObjectSuper physicsObject = collision.gameObject.GetComponent<PhysicsObjectSuper>();
+        if (physicsObject) physicsObject.CollideWith(this);
     }
 
     void OnTriggerEnter(Collider other)
