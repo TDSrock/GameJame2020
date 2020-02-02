@@ -43,7 +43,7 @@ public class MenuButtonController : MonoBehaviour
 
 
     public void StartGame() {
-        SceneManager.LoadScene("Timer");
+        //SceneManager.LoadScene("Timer");
     }
 
     public void QuitGame() {
