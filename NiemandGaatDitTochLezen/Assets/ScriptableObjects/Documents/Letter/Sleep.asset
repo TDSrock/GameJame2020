@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2b9c6989513940b6665864914b6d5, type: 3}
+  m_Name: Sleep
+  m_EditorClassIdentifier: 
+  president: {fileID: 0}
+  country: {fileID: 0}
+  text: "{0},\r\n\r\nI am afraid our plans have taken a downward turn. {1} has failed
+    me and the investigators of the EU, as the rabble now call them, destroyed our
+    harvest of the Violet Sleep below the den of the Creepers. The Sleep you have
+    is all that remains. Continue refining it and take what you create to Foxgrove
+    Manor. \n\r\nMay we continue our mutually beneficial relationship, and may the
+    Rune Lords rise again.\r\n\r\n- Infinity symbol"

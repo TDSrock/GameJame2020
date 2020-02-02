@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2b9c6989513940b6665864914b6d5, type: 3}
+  m_Name: Corona
+  m_EditorClassIdentifier: 
+  president: {fileID: 0}
+  country: {fileID: 0}
+  text: 'Dear mr. {0}
+
+
+    As the world has been working together to help {1} to fight the forest fires that
+    have killed millions of exotic animals, we have created a virus that can possibly
+    kill most of the population.
+
+
+    This virus has the same symptoms the flu but deadly, so it is hard to track down.
+    We are planning to release this virus to everyone who is against our regime. We
+    already have found a cure for this deadly virus and we will distribute it when
+    most of the opposition have been infected by the virus.
+
+
+    My country will help you as much as we can so that we can both change the world
+    to a better place.
+
+
+    Sincerely,
+
+
+    .......'

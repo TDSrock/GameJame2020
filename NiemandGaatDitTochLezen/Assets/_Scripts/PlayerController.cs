@@ -25,16 +25,22 @@ public class PlayerController : MonoBehaviour
 
     public List<IInteractable> interactables = new List<IInteractable>();
 
+    [SerializeField]
+    AudioSource walkingAudio, hitAudio;
+
+    float timeWalking;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     void Update()
     {
         rb.velocity = Vector3.zero;
-        if(interactables.Count != 0)
+        if (interactables.Count != 0)
 
         {
             IInteractable closest = interactables.GetClostestsInteractable(this.transform.position);
@@ -50,11 +56,18 @@ public class PlayerController : MonoBehaviour
         }
         GetInput();
 
-    }
-
-    private void FixedUpdate()
-    {
         Move();
+
+        if (rb.velocity.magnitude > 0 && !walkingAudio.isPlaying)
+        {
+            walkingAudio.Play();
+        }
+        else if (rb.velocity.magnitude <= 0) { walkingAudio.Stop(); }
+
+        if (rb.velocity.magnitude > 0)
+        {
+            timeWalking++;
+        }
     }
 
     void GetInput()
@@ -72,6 +85,12 @@ public class PlayerController : MonoBehaviour
     {
         PhysicsObjectSuper physicsObject = collision.gameObject.GetComponent<PhysicsObjectSuper>();
         if (physicsObject) physicsObject.CollideWith(this);
+
+        if (rb.velocity.magnitude > 2 && timeWalking > 5 && !collision.gameObject.CompareTag("Floor"))
+        {
+            hitAudio.Play();
+            timeWalking = 0;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -79,7 +98,7 @@ public class PlayerController : MonoBehaviour
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable != null)
         {
-            if(!interactables.Contains(interactable))
+            if (!interactables.Contains(interactable))
                 interactables.Add(interactable);//add the interactable to the list
         }
     }

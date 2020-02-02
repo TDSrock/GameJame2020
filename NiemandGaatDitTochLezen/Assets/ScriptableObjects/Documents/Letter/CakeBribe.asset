@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d2b9c6989513940b6665864914b6d5, type: 3}
+  m_Name: CakeBribe
+  m_EditorClassIdentifier: 
+  president: {fileID: 0}
+  country: {fileID: 0}
+  text: "Dear Employee,\r\n\r\nWe would like to inform you that the bribe in the form
+    of 20 pieces a cake has been accepted by Mr. {0}. Make sure they\u2019re delivered
+    to the krispy cream drive in {1} through at 12PM tonight.\r\n\nSincerely,\r\n\nA
+    definitely not shady patron\r\n"
