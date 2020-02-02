@@ -25,10 +25,16 @@ public class PlayerController : MonoBehaviour
 
     public List<IInteractable> interactables = new List<IInteractable>();
 
+    [SerializeField]
+    AudioSource walkingAudio, hitAudio;
+
+    float timeWalking;
+   
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+      
     }
 
     void Update()
@@ -50,12 +56,18 @@ public class PlayerController : MonoBehaviour
         }
         GetInput();
 
-    }
-
-    private void FixedUpdate()
-    {
         Move();
-        //Debug.Log(rb.velocity.magnitude);
+
+        if (rb.velocity.magnitude > 0 && !walkingAudio.isPlaying)
+        {
+            walkingAudio.Play();        
+        }
+        else if ( rb.velocity.magnitude <= 0) { walkingAudio.Stop(); }
+
+        if(rb.velocity.magnitude > 0)
+        {
+            timeWalking++;
+        }
     }
 
     void GetInput()
@@ -73,6 +85,12 @@ public class PlayerController : MonoBehaviour
     {
         PhysicsObjectSuper physicsObject = collision.gameObject.GetComponent<PhysicsObjectSuper>();
         if (physicsObject) physicsObject.CollideWith(this);
+
+        if(rb.velocity.magnitude > 2 && timeWalking > 5 && !collision.gameObject.CompareTag("Floor"))
+        {
+            hitAudio.Play();
+            timeWalking = 0;
+        }
     }
 
     void OnTriggerEnter(Collider other)

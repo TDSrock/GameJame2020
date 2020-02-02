@@ -15,6 +15,6 @@ MonoBehaviour:
   president: {fileID: 0}
   country: {fileID: 0}
   text: "Dear Employee,\r\n\r\nWe would like to inform you that the bribe in the form
-    of 20 pieces a cake has been accepted by Mr. {(0)}. Make sure they\u2019re delivered
-    to the krispy cream drive through at 12PM tonight.\r\n\nSincerely,\r\n\nA definitely
-    not shady patron\r\n"
+    of 20 pieces a cake has been accepted by Mr. {0}. Make sure they\u2019re delivered
+    to the krispy cream drive in {1} through at 12PM tonight.\r\n\nSincerely,\r\n\nA
+    definitely not shady patron\r\n"

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   president: {fileID: 0}
   country: {fileID: 0}
-  text: 'Dear mr. {(0)}
+  text: 'Dear mr. {0}
 
 
-    As the world has been working together to help {(1)} to fight the forest fires
-    that have killed millions of exotic animals, we have created a virus that can
-    possibly kill most of the population.
+    As the world has been working together to help {1} to fight the forest fires that
+    have killed millions of exotic animals, we have created a virus that can possibly
+    kill most of the population.
 
 
     This virus has the same symptoms the flu but deadly, so it is hard to track down.
