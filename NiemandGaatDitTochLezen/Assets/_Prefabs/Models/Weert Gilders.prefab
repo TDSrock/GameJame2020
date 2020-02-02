@@ -800,8 +800,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4647188554465232114}
   - component: {fileID: 3383367290639477128}
+  - component: {fileID: -51002092886474717}
   m_Layer: 0
-  m_Name: Weert
+  m_Name: Weert Gilders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,6 +844,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-51002092886474717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513343190734976737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29470c531ec896f409a4988fe9c1c967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  president: {fileID: 11400000, guid: ba62d2a06913aae45b414cbe33a1d2ef, type: 2}
 --- !u!1 &8572708388752286277
 GameObject:
   m_ObjectHideFlags: 0

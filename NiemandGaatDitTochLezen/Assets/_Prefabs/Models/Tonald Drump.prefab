@@ -746,8 +746,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7343098901322269632}
   - component: {fileID: 823576309378887354}
+  - component: {fileID: -6027124890633002002}
   m_Layer: 0
-  m_Name: Drump
+  m_Name: Tonald Drump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,6 +790,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6027124890633002002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033895871298859475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29470c531ec896f409a4988fe9c1c967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  president: {fileID: 11400000, guid: 28c070e92b3ec2b40915087b6504e809, type: 2}
 --- !u!1 &6069880490575279291
 GameObject:
   m_ObjectHideFlags: 0
