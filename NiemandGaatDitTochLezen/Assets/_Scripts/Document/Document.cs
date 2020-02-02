@@ -5,5 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewLetter", menuName ="Document/Letter")]
 public class Document : ScriptableObject
 {
-    public Alinea[] alineas;
+    public enum DocumentTypes
+    {
+        Image,
+        Letter,
+        Ad
+    }
 }
