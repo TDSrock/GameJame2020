@@ -89,7 +89,7 @@ public class FrontView : MonoBehaviour, IInteractable
         }
         playerCamera.transform.position = goalPos;//hard set at goal location.
 
-        if (goalPos != frontViewCameraLocation.transform.position)
+        if (goalPos == cachedCameraPosition)
         {
             smartCameraFollow.enabled = true;
             playerRender.enabled = true;

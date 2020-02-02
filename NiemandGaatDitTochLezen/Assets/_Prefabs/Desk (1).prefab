@@ -1,5 +1,157 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1790084145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790084146}
+  m_Layer: 8
+  m_Name: CameraLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1790084146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790084145}
+  m_LocalRotation: {x: 0.1710646, y: 0.6861027, z: -0.1710646, w: 0.6861027}
+  m_LocalPosition: {x: -3.5, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5420965204375889366}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 28, y: 90, z: 0}
+--- !u!1 &2124096282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2124096283}
+  - component: {fileID: 2124096287}
+  - component: {fileID: 2124096286}
+  - component: {fileID: 2124096285}
+  - component: {fileID: 2124096284}
+  m_Layer: 8
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2124096283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124096282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.178, y: 0.432, z: 1.462}
+  m_LocalScale: {x: 1.4, y: 0.5, z: 0.6}
+  m_Children: []
+  m_Father: {fileID: 1431198453607179498}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2124096287
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124096282}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2124096286
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124096282}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &2124096285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124096282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2124096284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124096282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d738e59a5b96bd498a40b8c2fd6bcd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionOnHoverText:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 2fe9f04c0ebf26042848f48c2f8c0e8e, type: 2}
+  document: {fileID: 0}
+  UIMaxTimeSearch:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7b5489c24502549428be55e6654c2fd2, type: 2}
+  timeToSearch:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ed9a03e851108d54fb43edf1d718aefe, type: 2}
+  timeSeaching:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3fe7ad27c35e6434187b89f5e4db0231, type: 2}
 --- !u!1 &578679193290467112
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +166,7 @@ GameObject:
   - component: {fileID: 6890469587328331020}
   - component: {fileID: 7930650003479254025}
   - component: {fileID: 8505841769874702700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Desk_main_Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +284,8 @@ GameObject:
   - component: {fileID: 6816411725131653811}
   - component: {fileID: 4021823571805496839}
   - component: {fileID: 621346481592701587}
-  m_Layer: 0
+  - component: {fileID: 1771635363}
+  m_Layer: 8
   m_Name: Desk_Desk_TopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,6 +365,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8900664, y: 0.38542205, z: 0.9465412}
   m_Center: {x: -0.062136993, y: 1.154736, z: 1.4832708}
+--- !u!114 &1771635363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665057801968178721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe2c27cb28d6043ad6b25c41ac25f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionOnHoverText:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 01eecead8a5941b489d8669c7c9a3996, type: 2}
+  pushAndPullSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 718f3f3acd460734f86aacede0bc2a66, type: 2}
+  PulloutRange:
+    UseConstant: 0
+    ConstantValue:
+      MinValue: 0
+      MaxValue: 0
+    Variable: {fileID: 11400000, guid: 151b8cdcf8616c04b9b8620225cc9868, type: 2}
 --- !u!1 &3766994158988330960
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +403,8 @@ GameObject:
   - component: {fileID: 7187038494687215359}
   - component: {fileID: 1065334340880255795}
   - component: {fileID: 2423806786799816474}
-  m_Layer: 0
+  - component: {fileID: 2064935813}
+  m_Layer: 8
   m_Name: Desk_Desk_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,6 +484,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7752431, y: 0.17156506, z: 1.1785063}
   m_Center: {x: -0.6195486, y: 1.2468035, z: 0}
+--- !u!114 &2064935813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766994158988330960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe2c27cb28d6043ad6b25c41ac25f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionOnHoverText:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 01eecead8a5941b489d8669c7c9a3996, type: 2}
+  pushAndPullSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 718f3f3acd460734f86aacede0bc2a66, type: 2}
+  PulloutRange:
+    UseConstant: 0
+    ConstantValue:
+      MinValue: 0
+      MaxValue: 0
+    Variable: {fileID: 11400000, guid: f33a012ae45b4ac4e85d786edf8d4aef, type: 2}
 --- !u!1 &6989548800478324645
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +522,8 @@ GameObject:
   - component: {fileID: 4149515084566526180}
   - component: {fileID: 4352138025751062194}
   - component: {fileID: 5113093935950454140}
-  m_Layer: 0
+  - component: {fileID: 1970592599}
+  m_Layer: 8
   m_Name: Desk_Desk_TopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,6 +603,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8900664, y: 0.38542205, z: 0.9465412}
   m_Center: {x: -0.062136993, y: 1.154736, z: -1.4832708}
+--- !u!114 &1970592599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989548800478324645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe2c27cb28d6043ad6b25c41ac25f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionOnHoverText:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 01eecead8a5941b489d8669c7c9a3996, type: 2}
+  pushAndPullSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 718f3f3acd460734f86aacede0bc2a66, type: 2}
+  PulloutRange:
+    UseConstant: 0
+    ConstantValue:
+      MinValue: 0
+      MaxValue: 0
+    Variable: {fileID: 11400000, guid: 151b8cdcf8616c04b9b8620225cc9868, type: 2}
 --- !u!1 &7341139103227898858
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +641,12 @@ GameObject:
   - component: {fileID: 7773338024866856165}
   - component: {fileID: 5284191555698941498}
   - component: {fileID: 3304374910386441064}
-  m_Layer: 0
+  - component: {fileID: 922401755}
+  - component: {fileID: 922401756}
+  - component: {fileID: 922401757}
+  - component: {fileID: 922401758}
+  - component: {fileID: 922401754}
+  m_Layer: 8
   m_Name: Desk_Desk_Botleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,9 +661,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7341139103227898858}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.608, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2124096283}
   m_Father: {fileID: 5420965204375889366}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486,8 +725,86 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8900664, y: 0.841941, z: 0.9465412}
-  m_Center: {x: -0.062136993, y: 0.4309705, z: 1.4832708}
+  m_Size: {x: 0.07762854, y: 0.841941, z: 0.946541}
+  m_Center: {x: -0.96835613, y: 0.4309705, z: 1.4832705}
+--- !u!65 &922401755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341139103227898858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06624828, y: 0.841941, z: 0.9465412}
+  m_Center: {x: 0.8497723, y: 0.4309705, z: 1.4832702}
+--- !u!65 &922401756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341139103227898858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8900664, y: 0.087138295, z: 0.9465412}
+  m_Center: {x: -0.062137008, y: 0.053569138, z: 1.4832708}
+--- !u!65 &922401757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341139103227898858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8900664, y: 0.841941, z: 0.024176732}
+  m_Center: {x: -0.062137008, y: 0.4309705, z: 1.0663179}
+--- !u!65 &922401758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341139103227898858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8900664, y: 0.841941, z: 0.02839048}
+  m_Center: {x: -0.062137008, y: 0.4309705, z: 1.9016753}
+--- !u!114 &922401754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341139103227898858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe2c27cb28d6043ad6b25c41ac25f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionOnHoverText:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 01eecead8a5941b489d8669c7c9a3996, type: 2}
+  pushAndPullSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 718f3f3acd460734f86aacede0bc2a66, type: 2}
+  PulloutRange:
+    UseConstant: 0
+    ConstantValue:
+      MinValue: 0
+      MaxValue: 0
+    Variable: {fileID: 11400000, guid: 151b8cdcf8616c04b9b8620225cc9868, type: 2}
 --- !u!1 &8819682355996018107
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +817,8 @@ GameObject:
   - component: {fileID: 6397400960722425224}
   - component: {fileID: 7936688741209319927}
   - component: {fileID: 8180591979229588313}
-  m_Layer: 0
+  - component: {fileID: 171641376}
+  m_Layer: 8
   m_Name: Desk_Desk_BotRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,6 +898,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8900664, y: 0.841941, z: 0.9465412}
   m_Center: {x: -0.062136993, y: 0.4309705, z: -1.4832708}
+--- !u!114 &171641376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8819682355996018107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fe2c27cb28d6043ad6b25c41ac25f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionOnHoverText:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 01eecead8a5941b489d8669c7c9a3996, type: 2}
+  pushAndPullSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 718f3f3acd460734f86aacede0bc2a66, type: 2}
+  PulloutRange:
+    UseConstant: 0
+    ConstantValue:
+      MinValue: 0
+      MaxValue: 0
+    Variable: {fileID: 11400000, guid: 151b8cdcf8616c04b9b8620225cc9868, type: 2}
 --- !u!1 &9034356063125968837
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +934,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5420965204375889366}
   - component: {fileID: 118708942452401204}
-  m_Layer: 0
+  - component: {fileID: 811879161}
+  - component: {fileID: 811879158}
+  m_Layer: 8
   m_Name: Desk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +950,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9034356063125968837}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.11, y: 10.64069, z: -7.69}
   m_LocalScale: {x: 1, y: 1, z: 1.2}
   m_Children:
@@ -614,6 +960,7 @@ Transform:
   - {fileID: 1149467201503565043}
   - {fileID: 2856347460775767622}
   - {fileID: 8555145814134426368}
+  - {fileID: 1790084146}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -633,3 +980,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &811879161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9034356063125968837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1, z: 4}
+  m_Center: {x: -1.75, y: 1, z: 0}
+--- !u!114 &811879158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9034356063125968837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051e85bf504dac64cb9541a8d493932d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontViewInteractor: {fileID: 0}
+  playerCamera: {fileID: 0}
+  player: {fileID: 0}
+  frontViewCameraLocation: {fileID: 1790084145}
+  isInteractingWith: 0
+  closeInteractionKey: 101
+  cameraLerpTime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ed9a03e851108d54fb43edf1d718aefe, type: 2}
+  objectName: Desk

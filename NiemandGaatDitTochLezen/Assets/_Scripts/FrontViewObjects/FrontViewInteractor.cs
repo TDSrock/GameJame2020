@@ -6,6 +6,7 @@ using SjorsGielen.CustomVariables.ReferenceVariables;
 public class FrontViewInteractor : MonoBehaviour
 {
     public StringReference interactionHelpText;
+    public LayerMask layerMask;
     Camera cam;
     public IFrontViewInteractable mostRecentInteractedInteractable;
     private void Start()
@@ -34,7 +35,7 @@ public class FrontViewInteractor : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 30, Color.green);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray,out hit))
+        if (Physics.Raycast(ray,out hit, 300f, layerMask))
         {
             IFrontViewInteractable interactable = hit.collider.gameObject.GetComponent<IFrontViewInteractable>();
             

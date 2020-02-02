@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Debug.Log(rb.velocity.magnitude);
     }
 
     void GetInput()
