@@ -275,7 +275,7 @@ MonoBehaviour:
   numObjects: 5
   prefabs:
   - {fileID: 5806150435328409822, guid: d6e16a6776b32ce4c8874bfea1daf6bf, type: 3}
-  - {fileID: -927199367670048503, guid: 6a5361d0fc0edeb4f8a2cc654d76605f, type: 3}
+  - {fileID: 3399604293609057165, guid: 4e90b086ca1beeb45854382540e583c7, type: 3}
   - {fileID: 7431750696105245572, guid: 9fc86a266e8ec1d4dbb43686e75ea313, type: 3}
   - {fileID: 6033895871298859475, guid: b7e929cd5d417a64aa519407a91597a8, type: 3}
   - {fileID: 8513343190734976737, guid: 2c120fcbd93fae24ba4f663d51dbe9fa, type: 3}
