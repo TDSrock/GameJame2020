@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   president: {fileID: 0}
   country: {fileID: 0}
-  text: "Headline!\r\n\r\nVeganism causes burning to extreme meat eaters. \r\n\r\nMake
-    sure this information is kept from the press because it\u2019ll cause chaos.\r\n"
+  text: "Headline!\r\n\r\n\"Veganism causes burning to extreme meat eaters\" \rSays
+    {0}\n\r\nMake sure this information is kept from the press because it\u2019ll
+    cause chaos.\r\n"
