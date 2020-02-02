@@ -128,3 +128,6 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 
     Variable: {fileID: 11400000, guid: 0182ae6f1bb35a04292cc2f0df47b549, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256

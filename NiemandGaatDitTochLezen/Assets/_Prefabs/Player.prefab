@@ -109,6 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveDirection: {x: 0, y: 0, z: 0}
+  interactionKey: 101
+  interactionTextHint:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 0182ae6f1bb35a04292cc2f0df47b549, type: 2}
 --- !u!54 &7002049143964886230
 Rigidbody:
   m_ObjectHideFlags: 0

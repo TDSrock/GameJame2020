@@ -51,7 +51,8 @@ public class FrontView : MonoBehaviour, IInteractable
     {
         foreach(var col in interactionColliders)
         {
-            col.enabled = false;
+            if(col.isTrigger)
+                col.enabled = false;
         }
         StopAllCoroutines();
         StartCoroutine(MoveCamera(frontViewCameraLocation.transform.position, frontViewCameraLocation.transform.rotation));
@@ -89,7 +90,7 @@ public class FrontView : MonoBehaviour, IInteractable
         }
         playerCamera.transform.position = goalPos;//hard set at goal location.
 
-        if (goalPos != frontViewCameraLocation.transform.position)
+        if (goalPos == cachedCameraPosition)
         {
             smartCameraFollow.enabled = true;
             playerRender.enabled = true;
@@ -108,7 +109,8 @@ public class FrontView : MonoBehaviour, IInteractable
     {
         foreach (var col in interactionColliders)
         {
-            col.enabled = true;
+            if (col.isTrigger)
+                col.enabled = true;
         }
         frontViewInteractor.enabled = false;
         StopAllCoroutines();
