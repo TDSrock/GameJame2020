@@ -11,6 +11,7 @@ public class Alinea : ScriptableObject
     [SerializeField]
     Country country;
 
+    [SerializeField]
     [TextArea(3, 10)]
     string text;
 
