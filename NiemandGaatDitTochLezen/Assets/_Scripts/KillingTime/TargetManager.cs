@@ -39,7 +39,9 @@ public class TargetManager : MonoBehaviour {
             } else {
                 currentIndex += 1;
             }
-            rotationTarget -= (360 / numObjects);
+
+            rotationTarget += (360 / numObjects);
+
         }
 
         if (Input.GetKeyDown(KeyCode.D)) {
@@ -50,7 +52,7 @@ public class TargetManager : MonoBehaviour {
             else {
                 currentIndex -= 1;
             }
-            rotationTarget += (360 / numObjects);
+            rotationTarget -= (360 / numObjects);
         }
 
         if (Input.GetMouseButtonDown(0)) {

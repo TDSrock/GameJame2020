@@ -274,11 +274,11 @@ MonoBehaviour:
   presidentParent: {fileID: 70250011}
   numObjects: 5
   prefabs:
-  - {fileID: -927199367670048503, guid: 935e89728622708429a9facb84001bd0, type: 3}
-  - {fileID: -927199367670048503, guid: 935e89728622708429a9facb84001bd0, type: 3}
-  - {fileID: -927199367670048503, guid: 935e89728622708429a9facb84001bd0, type: 3}
-  - {fileID: -927199367670048503, guid: 935e89728622708429a9facb84001bd0, type: 3}
-  - {fileID: -927199367670048503, guid: 935e89728622708429a9facb84001bd0, type: 3}
+  - {fileID: -927199367670048503, guid: afd282a03b15d064b9c269bb54756a56, type: 3}
+  - {fileID: -927199367670048503, guid: 6a5361d0fc0edeb4f8a2cc654d76605f, type: 3}
+  - {fileID: -927199367670048503, guid: 0291a3c408d8425479f57ceefd148856, type: 3}
+  - {fileID: -927199367670048503, guid: 80cbf2adc7f15a94287463df1b8eca4b, type: 3}
+  - {fileID: -927199367670048503, guid: 80cbf2adc7f15a94287463df1b8eca4b, type: 3}
 --- !u!4 &777952711
 Transform:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777952709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33954516, y: -1.0296879, z: -1.4864392}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
