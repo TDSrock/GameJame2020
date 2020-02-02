@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.magnitude > 0)
         {
             timeWalking++;
+            transform.forward = rb.velocity.normalized;
         }
     }
 
