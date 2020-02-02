@@ -18,6 +18,7 @@ public class FrontView : MonoBehaviour, IInteractable
     public bool isInteractingWith = false;
     public KeyCode closeInteractionKey = KeyCode.P;
 
+    Collider[] interactionColliders;
     Vector3 cachedCameraPosition;
     Quaternion cachedCameraRotation;
 
@@ -28,7 +29,8 @@ public class FrontView : MonoBehaviour, IInteractable
     public string objectName;
 
     public void Start()
-    {        
+    {
+        interactionColliders = GetComponents<Collider>();
         smartCameraFollow = playerCamera.GetComponent<SmartCameraFollow>();
         playerRender = player.GetComponent<MeshRenderer>();
     }
@@ -47,6 +49,11 @@ public class FrontView : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
+        foreach(var col in interactionColliders)
+        {
+            if(col.isTrigger)
+                col.enabled = false;
+        }
         StopAllCoroutines();
         StartCoroutine(MoveCamera(frontViewCameraLocation.transform.position, frontViewCameraLocation.transform.rotation));
     }
@@ -100,6 +107,11 @@ public class FrontView : MonoBehaviour, IInteractable
 
     public void OnStopInteract()
     {
+        foreach (var col in interactionColliders)
+        {
+            if (col.isTrigger)
+                col.enabled = true;
+        }
         frontViewInteractor.enabled = false;
         StopAllCoroutines();
         StartCoroutine( MoveCamera(cachedCameraPosition, cachedCameraRotation));
