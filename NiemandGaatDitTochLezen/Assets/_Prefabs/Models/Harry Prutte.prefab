@@ -363,8 +363,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1834807620295399838}
   - component: {fileID: 8645934980921799908}
+  - component: {fileID: -1398478000453496809}
   m_Layer: 0
-  m_Name: Prutte
+  m_Name: Harry Prutte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,6 +407,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1398478000453496809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399604293609057165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29470c531ec896f409a4988fe9c1c967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  president: {fileID: 11400000, guid: 843151b9cd878744d8c4deae4e915b9f, type: 2}
 --- !u!1 &3630452204303161868
 GameObject:
   m_ObjectHideFlags: 0

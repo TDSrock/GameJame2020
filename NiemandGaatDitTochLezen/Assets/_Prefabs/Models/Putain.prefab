@@ -715,8 +715,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7406397014011556557}
   - component: {fileID: 595263596275474359}
+  - component: {fileID: 5775188189374744599}
   m_Layer: 0
-  m_Name: Putin
+  m_Name: Putain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,6 +759,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5775188189374744599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806150435328409822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29470c531ec896f409a4988fe9c1c967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  president: {fileID: 11400000, guid: 54adeb4c916ca954ea131b5255557f40, type: 2}
 --- !u!1 &5882669064797044103
 GameObject:
   m_ObjectHideFlags: 0
