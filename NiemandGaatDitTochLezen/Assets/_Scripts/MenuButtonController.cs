@@ -6,15 +6,32 @@ using UnityEngine.SceneManagement;
 public class MenuButtonController : MonoBehaviour
 {
 
-    public int index;
+    [SerializeField]
+    private GameObject presidentParent;
+
 
     [SerializeField]
     private bool keyDown;
 
     [SerializeField]
     private int maxIndex;
-    
-   
+
+    public int numObjects = 5;
+    public GameObject[] prefabs;
+    public int index;
+
+
+    private void Start() {
+        float radius = 5f;
+
+        for (int i = 0; i < numObjects; i++) {
+            float angle = i * Mathf.PI * 2f / numObjects;
+            Vector3 newPos = new Vector3(Camera.main.transform.position.x + Mathf.Cos(angle) * radius, 0, Camera.main.transform.position.z + Mathf.Sin(angle) * radius);
+            GameObject go = Instantiate(prefabs[i], newPos, Quaternion.FromToRotation(Vector3.forward, Camera.main.transform.position - newPos), presidentParent.transform);
+            go.transform.position = new Vector3(go.transform.position.x, -2, go.transform.position.z);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

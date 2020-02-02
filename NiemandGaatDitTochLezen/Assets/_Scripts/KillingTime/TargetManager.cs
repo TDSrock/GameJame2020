@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TargetManager : MonoBehaviour {
     [SerializeField]
@@ -9,11 +10,19 @@ public class TargetManager : MonoBehaviour {
     [SerializeField]
     private GameObject presidentParent;
 
+    [SerializeField]
+    private TextMeshProUGUI nameTarget;
+
+    [SerializeField]
+    private Animator selectedAnimator;
+
     private bool isRotating;
     private float rotationTarget;
 
     public int numObjects = 5;
     public GameObject[] prefabs;
+
+    private bool killed;
 
 
 
@@ -39,8 +48,9 @@ public class TargetManager : MonoBehaviour {
             } else {
                 currentIndex += 1;
             }
-
+            nameTarget.text = prefabs[currentIndex].name;
             rotationTarget += (360 / numObjects);
+            selectedAnimator = prefabs[currentIndex].GetComponent<Animator>();
 
         }
 
@@ -52,11 +62,17 @@ public class TargetManager : MonoBehaviour {
             else {
                 currentIndex -= 1;
             }
+            nameTarget.text = prefabs[currentIndex].name;
             rotationTarget -= (360 / numObjects);
+            selectedAnimator = prefabs[currentIndex].GetComponent<Animator>();
         }
 
         if (Input.GetMouseButtonDown(0)) {
             Debug.Log(prefabs[currentIndex].name + " is DEAD");
+
+
+           prefabs[currentIndex].GetComponent<Animator>();
+
             // KILL TARGET
         }
 
