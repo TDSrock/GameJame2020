@@ -6,5 +6,10 @@ using UnityEngine;
 public class ImageObject : Document
 {
     [SerializeField]
-    Sprite image;
+    public Sprite image;
+
+    private void Awake()
+    {
+        this.docType = DocumentType.Image;
+    }
 }

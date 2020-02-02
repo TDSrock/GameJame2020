@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewLetter", menuName = "Document/Letter")]
 public class Letter : Document
 {
+    
     [SerializeField]
     President president;
     [SerializeField]
@@ -14,6 +15,11 @@ public class Letter : Document
     [SerializeField]
     [TextArea(3, 10)]
     string text;
+
+    private void Awake()
+    {
+        this.docType = DocumentType.Letter;
+    }
 
     public void BuildString()
     {

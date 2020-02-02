@@ -9,6 +9,11 @@ public class President : ScriptableObject
     public Sprite getPresidentPortrait { get { return presidentPortrait; } private set { presidentPortrait = value; } }
     public Country getHomeCOuntry { get { return homeCountry; } private set { homeCountry = value; } }
 
+    public List<ImageObject> whenCorruptNotes = new List<ImageObject>();
+    public List<ImageObject> whenCleanNotes = new List<ImageObject>();
+
+    public bool isClean = false;
+
     [SerializeField]
     string presidentName;
     [SerializeField]
