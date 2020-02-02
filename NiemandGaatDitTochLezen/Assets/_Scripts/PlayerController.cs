@@ -5,7 +5,7 @@ using SjorsGielen.CustomVariables.ReferenceVariables;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody body;
+    public Animator animat;
 
     [SerializeField]
     float moveSpeed = 5;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+        animat = GetComponent<Animator>();
     }
 
     void Update()
@@ -67,7 +67,9 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.magnitude > 0)
         {
             timeWalking++;
-        }
+            transform.forward = rb.velocity.normalized;
+            animat.SetBool("IsMoving", true);
+        } else { animat.SetBool("IsMoving", false); }
     }
 
     void GetInput()
