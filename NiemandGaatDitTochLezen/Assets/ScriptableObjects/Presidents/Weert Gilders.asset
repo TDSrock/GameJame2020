@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bdcd77dec056949b5621bcf8b120fb, type: 3}
   m_Name: Weert Gilders
   m_EditorClassIdentifier: 
+  whenCorruptNotes:
+  - {fileID: 11400000, guid: 62821bc47277c324583a5d05e4ed5ef1, type: 2}
+  - {fileID: 11400000, guid: 15b4b9da074e31a49bc13eadc83844da, type: 2}
+  - {fileID: 11400000, guid: 7a821c5dd4f6b544494b6cf8645922e6, type: 2}
+  whenCleanNotes: []
+  isClean: 0
   presidentName: Weert Gilders
   homeCountry: {fileID: 11400000, guid: 17aca4760a5070f46a4afe28642220fe, type: 2}
   presidentPortrait: {fileID: 0}

@@ -25,6 +25,7 @@ public class TimerText : MonoBehaviour
             if (timer < 1) {
                 timeLeft = false;
                 //FANCY EVENT DIE ER NOG IN MOET
+                PersisntSceneManagementComponent.instance.LoadSceneWithLoadScreen("ShootPresedent Stage");
             }
         }
         

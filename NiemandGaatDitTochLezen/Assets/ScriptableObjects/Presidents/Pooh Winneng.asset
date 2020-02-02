@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bdcd77dec056949b5621bcf8b120fb, type: 3}
   m_Name: Pooh Winneng
   m_EditorClassIdentifier: 
+  whenCorruptNotes:
+  - {fileID: 11400000, guid: 514ed7d5209674644a7f2e3a478abbdc, type: 2}
+  - {fileID: 11400000, guid: a93525f1807708d45bf7ba35ebdd4991, type: 2}
+  - {fileID: 11400000, guid: 2e6ab9c0ca505fc42bab27ef2eacdaa1, type: 2}
+  whenCleanNotes: []
+  isClean: 0
   presidentName: Poh Winneg
   homeCountry: {fileID: 11400000, guid: 68bc876100adc9047b1c4e2adc800038, type: 2}
   presidentPortrait: {fileID: 0}
