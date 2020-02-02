@@ -4,15 +4,21 @@ using UnityEngine;
 using SjorsGielen.CustomVariables.ReferenceVariables;
 using SjorsGielen.UsefullScripts;
 
-abstract public class FrontViewSuper : MonoBehaviour, IInteractable
+public class FrontView : MonoBehaviour, IInteractable
 {
-
+    [Header("Must set these in scene or we get fucked")]
+    public FrontViewInteractor frontViewInteractor;
     public Camera playerCamera;
     protected SmartCameraFollow smartCameraFollow;
-    public GameObject frontViewCameraLocation;
     public PlayerController player;
     protected MeshRenderer playerRender;
 
+    [Header("Prefab variables")]
+    public GameObject frontViewCameraLocation;
+    public bool isInteractingWith = false;
+    public KeyCode closeInteractionKey = KeyCode.P;
+
+    Collider[] interactionColliders;
     Vector3 cachedCameraPosition;
     Quaternion cachedCameraRotation;
 
@@ -24,12 +30,29 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
 
     public void Start()
     {
+        interactionColliders = GetComponents<Collider>();
         smartCameraFollow = playerCamera.GetComponent<SmartCameraFollow>();
         playerRender = player.GetComponent<MeshRenderer>();
     }
 
+    public void Update()
+    {
+        if (isInteractingWith)
+        {
+            if (Input.GetKeyUp(closeInteractionKey))
+            {
+                this.isInteractingWith = false;
+                this.CloseInteraction();
+            }
+        }
+    }
+
     public void OnInteract()
     {
+        foreach(var col in interactionColliders)
+        {
+            col.enabled = false;
+        }
         StopAllCoroutines();
         StartCoroutine(MoveCamera(frontViewCameraLocation.transform.position, frontViewCameraLocation.transform.rotation));
     }
@@ -44,7 +67,7 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
             cachedCameraRotation = playerCamera.transform.rotation;
             smartCameraFollow.enabled = false;
             player.enabled = false;//take away control from the character
-            player.interactionTextHint.gameObject.SetActive(false);
+            player.interactionTextHint.Value = "";
         }
         else
         {
@@ -54,7 +77,6 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
         float timeLerping = 0;
         while (timeLerping <= cameraLerpTime)
         {
-            Debug.Log(timeLerping);
             timeLerping += Time.deltaTime;
             if (timeLerping != 0)
             {
@@ -71,7 +93,7 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
         {
             smartCameraFollow.enabled = true;
             playerRender.enabled = true;
-            player.interactionTextHint.gameObject.SetActive(true);
+            player.interactionTextHint.Value = "";
         }
         else
         {
@@ -84,6 +106,11 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
 
     public void OnStopInteract()
     {
+        foreach (var col in interactionColliders)
+        {
+            col.enabled = true;
+        }
+        frontViewInteractor.enabled = false;
         StopAllCoroutines();
         StartCoroutine( MoveCamera(cachedCameraPosition, cachedCameraRotation));
     }
@@ -91,13 +118,18 @@ abstract public class FrontViewSuper : MonoBehaviour, IInteractable
     /// <summary>
     /// Function to setup the interaction with this specific interatble frontview element.
     /// </summary>
-    abstract public void SetupInteraction();
+    virtual public void SetupInteraction()
+    {
+        isInteractingWith = true;
+        frontViewInteractor.enabled = true;
+    }
 
     /// <summary>
     /// Function to remove anything setup bu the SetupInteraction function
     /// </summary>
     virtual public void CloseInteraction()
     {
+        isInteractingWith = false;
         OnStopInteract();
     }
 

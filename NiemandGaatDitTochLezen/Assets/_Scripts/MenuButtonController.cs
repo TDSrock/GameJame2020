@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuButtonController : MonoBehaviour
 {
@@ -38,5 +39,14 @@ public class MenuButtonController : MonoBehaviour
         } else {
             keyDown = false;
         }
+    }
+
+
+    public void StartGame() {
+        SceneManager.LoadScene("Timer");
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 }
