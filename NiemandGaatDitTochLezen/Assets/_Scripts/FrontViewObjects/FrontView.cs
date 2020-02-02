@@ -11,7 +11,7 @@ public class FrontView : MonoBehaviour, IInteractable
     public Camera playerCamera;
     protected SmartCameraFollow smartCameraFollow;
     public PlayerController player;
-    protected MeshRenderer playerRender;
+    protected SkinnedMeshRenderer playerRender;
 
     [Header("Prefab variables")]
     public GameObject frontViewCameraLocation;
@@ -32,7 +32,7 @@ public class FrontView : MonoBehaviour, IInteractable
     {
         interactionColliders = GetComponents<Collider>();
         smartCameraFollow = playerCamera.GetComponent<SmartCameraFollow>();
-        playerRender = player.GetComponent<MeshRenderer>();
+        playerRender = player.GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     public void Update()

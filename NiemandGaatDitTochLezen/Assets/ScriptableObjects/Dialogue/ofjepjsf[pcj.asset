@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5d12ecda08285429646312defb7637, type: 3}
+  m_Name: ofjepjsf[pcj
+  m_EditorClassIdentifier: 
+  sentences:
+  - character: {fileID: 11400000, guid: df7ecc0806c6fbd4397f5196b2d707f6, type: 2}
+    line: Come in Evil Agent!
+  - character: {fileID: 0}
+    line: We must uphold the line of evil politicians
+  - character: {fileID: 0}
+    line: 'Search the various cabinets, drawers, books and anything else you can get
+      your hands on. '
+  - character: {fileID: 0}
+    line: Find out who is an innocent  politicians before the timer ends. After that
+      we will kill him.
+  - character: {fileID: 0}
+    line: We're counting on your Evil Agent!!
+  - character: {fileID: 0}
+    line: Mr. Evil Snuggle Out!

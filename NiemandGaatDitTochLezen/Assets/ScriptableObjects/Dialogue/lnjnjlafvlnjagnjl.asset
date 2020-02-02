@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5bd8e0476e6134494dc722055ca7ba, type: 3}
-  m_Name: WeirdAdd
+  m_Script: {fileID: 11500000, guid: 0bbafe53fc90ece4da4e64448d1c40b2, type: 3}
+  m_Name: lnjnjlafvlnjagnjl
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: bb4e632229025ac45960740bc72d8ff6, type: 3}
+  name: Mr. Evil Snuggle
+  characterPortrait: {fileID: 21300000, guid: abfd4181cca3001448ecb9a51735fbe2, type: 3}
