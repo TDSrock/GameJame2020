@@ -5,10 +5,9 @@ namespace SjorsGielen.CustomVariables
 {
     public abstract class AbstractVariable<T> : ScriptableObject
     {
-#if UNITY_EDITOR
         [Multiline]
         public string DeveloperDescription = "";
-#endif
+
         //To change the min-max range of all minmaxrange variables edit the below values.
         [MinMaxRange(-100, 100)][SerializeField]
         private T value;
