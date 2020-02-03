@@ -84,7 +84,9 @@ namespace SjorsGielen.UsefullScripts
             if (cameraPullEffect != 0 && cameraPullDistance != 0)
             {
                 Collider[] objectsFoundInRange = Physics.OverlapSphere(toFollowObject.transform.position, cameraPullDistance, cameraPullMask);
+#if UNITY_EDITOR
                 EffectingCameraDebugList.Clear();//clear this each frame
+#endif
                 if (objectsFoundInRange.Length != 0)
                 {
                     targetOffset = startOffset;

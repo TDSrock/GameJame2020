@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public int presidentNotesDuplicates = 2;
     public int fillerDuplicates = 2;
-    public int numbOfCorruptFuckers = 4;
     public List<President> presidents = new List<President>();
     public List<ImageObject> filler = new List<ImageObject>();
     public GameObject rootGameobjectForFinding;
@@ -25,12 +24,11 @@ public class GameManager : MonoBehaviour
         var copy = new List<President>(presidents);
         foreach (var pres in presidents)
         {
-            pres.isClean = true;
+            pres.isClean = false;
         }
-        for (int i = 0; i < numbOfCorruptFuckers; i++)
-        {
-            copy.RemoveRandom().isClean = false;
-        }
+
+        presidents.RandomItem().isClean = true;
+        
         for (int i = 0; i < presidentNotesDuplicates; i++)
         {
             foreach (President pres in presidents)

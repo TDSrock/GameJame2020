@@ -16,7 +16,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 32b2419a7a77231418001ce7d4184169, type: 2}
   - {fileID: 11400000, guid: b34b145c4a19be943acbb3bbce57b734, type: 2}
   - {fileID: 11400000, guid: bbbb6a5b279a5be4e88d2980cc5493bd, type: 2}
-  whenCleanNotes: []
+  whenCleanNotes:
+  - {fileID: 11400000, guid: bcbefa20c0e6acf4096795019bb1ec01, type: 2}
   isClean: 0
   presidentName: Tonald Drump
   homeCountry: {fileID: 11400000, guid: 7f897fde3b8c05f46a9b0d9035c12dfb, type: 2}

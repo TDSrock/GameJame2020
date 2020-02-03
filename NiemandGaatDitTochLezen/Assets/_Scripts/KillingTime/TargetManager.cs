@@ -48,14 +48,18 @@ public class TargetManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (!killed) {
-            if (Input.GetKeyDown(KeyCode.A)) {
+        if (!killed)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
 
-                if (currentIndex >= numObjects - 1) {
+                if (currentIndex >= numObjects - 1)
+                {
                     currentIndex = 0;
 
                 }
-                else {
+                else
+                {
                     currentIndex += 1;
                 }
                 nameTarget.text = prefabs[currentIndex].name;
@@ -64,12 +68,15 @@ public class TargetManager : MonoBehaviour {
 
             }
 
-            if (Input.GetKeyDown(KeyCode.D)) {
+            if (Input.GetKeyDown(KeyCode.D))
+            {
 
-                if (currentIndex <= 0) {
+                if (currentIndex <= 0)
+                {
                     currentIndex = numObjects - 1;
                 }
-                else {
+                else
+                {
                     currentIndex -= 1;
                 }
                 nameTarget.text = prefabs[currentIndex].name;
@@ -77,15 +84,24 @@ public class TargetManager : MonoBehaviour {
                 selectedAnimator = instances[currentIndex].GetComponent<Animator>();
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0))
+            {
                 killed = true;
                 Debug.Log(prefabs[currentIndex].name + " is DEAD");
 
-                if (selectedAnimator.gameObject.activeSelf) {
+                if (selectedAnimator.gameObject.activeSelf)
+                {
 
                     selectedAnimator.SetBool("isDead", true);
                 }
                 CheckAnswer();
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Application.Quit();
             }
         }
        

@@ -23,7 +23,7 @@ public class MenuButtonController : MonoBehaviour
 
     private void Start() {
         float radius = 5f;
-
+        numObjects = prefabs.Length;
         for (int i = 0; i < numObjects; i++) {
             float angle = i * Mathf.PI * 2f / numObjects;
             Vector3 newPos = new Vector3(Camera.main.transform.position.x + Mathf.Cos(angle) * radius, 0, Camera.main.transform.position.z + Mathf.Sin(angle) * radius);

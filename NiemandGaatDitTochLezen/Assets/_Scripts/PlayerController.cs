@@ -37,9 +37,8 @@ public class PlayerController : MonoBehaviour
         animat = GetComponent<Animator>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        rb.velocity = Vector3.zero;
         if (interactables.Count != 0)
 
         {
@@ -54,6 +53,16 @@ public class PlayerController : MonoBehaviour
         {
             interactionTextHint.Value = "";
         }
+
+        interactables.Clear();
+    }
+
+    void Update()
+    {
+
+        rb.velocity = Vector3.zero;
+
+
         GetInput();
 
         Move();
@@ -95,22 +104,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         IInteractable interactable = other.GetComponent<IInteractable>();
         if (interactable != null)
         {
             if (!interactables.Contains(interactable))
                 interactables.Add(interactable);//add the interactable to the list
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        IInteractable interactable = other.GetComponent<IInteractable>();
-        if (interactable != null)
-        {
-            interactables.Remove(interactable);//remove the interactable from the list
         }
     }
 }

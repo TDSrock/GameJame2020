@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/LoadingScreenScene.unity
     guid: 600e7598587fa89499df5db641934942
+  - enabled: 1
+    path: Assets/_Scenes/ShootPresedent Stage.unity
+    guid: 1fc891128befbf3459bd2812564778de
   m_configObjects: {}

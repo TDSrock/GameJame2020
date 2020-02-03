@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bdcd77dec056949b5621bcf8b120fb, type: 3}
   m_Name: Putain
   m_EditorClassIdentifier: 
+  whenCorruptNotes:
+  - {fileID: 11400000, guid: 753c60f067134884a9238e5070b0171b, type: 2}
+  - {fileID: 11400000, guid: 2d21f037611594a478a7f8311f58ed72, type: 2}
+  - {fileID: 11400000, guid: b5838043860efe74f87677b821158d9e, type: 2}
+  whenCleanNotes:
+  - {fileID: 11400000, guid: 417dddb87206a994c9a9fd92b3f5f316, type: 2}
+  isClean: 0
   presidentName: Vlad Putain
   homeCountry: {fileID: 11400000, guid: 087b908987ab9ab40af7ab5819881323, type: 2}
   presidentPortrait: {fileID: 0}

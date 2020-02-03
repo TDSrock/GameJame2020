@@ -37,6 +37,7 @@ public class FrontViewInteractor : MonoBehaviour
 
         if (Physics.Raycast(ray,out hit, 3000f, layerMask))
         {
+            Debug.LogFormat("Ray is now detecting {0} ; {1}", hit.collider.name, hit.distance);
             IFrontViewInteractable interactable = hit.collider.gameObject.GetComponent<IFrontViewInteractable>();
             
             if(interactable != null)
