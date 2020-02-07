@@ -28,6 +28,8 @@ public class FrontView : MonoBehaviour, IInteractable
     [Tooltip("Is used for the text hint for the player")]
     public string objectName;
 
+    public GameObject GameObject => this.gameObject;
+
     public void Start()
     {
         interactionColliders = GetComponents<Collider>();

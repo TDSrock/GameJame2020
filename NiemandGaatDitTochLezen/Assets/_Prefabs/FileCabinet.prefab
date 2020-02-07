@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2790048701775453353}
   - component: {fileID: 9035437769110567967}
-  - component: {fileID: 8992184168179193242}
+  - component: {fileID: 5239258071736424164}
   m_Layer: 8
   m_Name: FileCabinet
   m_TagString: Untagged
@@ -90,19 +90,22 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 84ed09b5eb0d58c4aa13941bfdc8cd29, type: 2}
   objectName: Cabinet
---- !u!65 &8992184168179193242
-BoxCollider:
+--- !u!54 &5239258071736424164
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216929968631279290}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7568665, y: 3.0210304, z: 1.0782719}
-  m_Center: {x: -0.6215668, y: 1.4935503, z: 0.0004968643}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1305945199600159392
 GameObject:
   m_ObjectHideFlags: 0

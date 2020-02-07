@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public Vector3 Velocity { get { return moveDirection * moveSpeed; } }
-
+    public LayerMask interactionMask;
     public KeyCode interactionKey = KeyCode.E;
+    public float interactionRange = 3f;
     [Header("Interactable UI")]
     public StringReference interactionTextHint;
 
@@ -37,10 +38,31 @@ public class PlayerController : MonoBehaviour
         animat = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        if (interactables.Count != 0)
 
+        rb.velocity = Vector3.zero;
+
+
+        interactables.Clear();
+        Collider[] buffer = Physics.OverlapSphere(this.transform.position, interactionRange, interactionMask);
+        foreach (var obj in buffer)
+        {
+            IInteractable interactable = obj.GetComponent<IInteractable>();
+            if (interactable == null) interactable = obj.GetComponentInParent<IInteractable>();
+            RaycastHit hitInfo;
+            if (interactable != null)
+            {
+                Ray ray = new Ray(transform.position + new Vector3(0, 1f, 0), interactable.GetPosition() - transform.position);
+                if (Physics.Raycast(ray, out hitInfo, interactionRange))
+                {
+                    Debug.Log(interactable.GameObject.name + " " + hitInfo.collider.gameObject.name);
+                    if (interactable.GameObject == hitInfo.collider.gameObject || hitInfo.collider.gameObject.transform.IsChildOf(interactable.GameObject.transform))
+                        interactables.Add(interactable);
+                }
+            }
+        }
+        if (interactables.Count != 0)
         {
             IInteractable closest = interactables.GetClostestsInteractable(this.transform.position);
             interactionTextHint.Value = string.Format("Press {0} to interact with {1}", interactionKey, closest.GetObjectName());
@@ -53,15 +75,6 @@ public class PlayerController : MonoBehaviour
         {
             interactionTextHint.Value = "";
         }
-
-        interactables.Clear();
-    }
-
-    void Update()
-    {
-
-        rb.velocity = Vector3.zero;
-
 
         GetInput();
 
@@ -104,13 +117,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    public void OnDrawGizmos()
     {
-        IInteractable interactable = other.GetComponent<IInteractable>();
-        if (interactable != null)
+        Gizmos.DrawWireSphere(this.transform.position, interactionRange);
+        foreach(var a in interactables)
         {
-            if (!interactables.Contains(interactable))
-                interactables.Add(interactable);//add the interactable to the list
+            Gizmos.DrawLine(this.transform.position + new Vector3(0,1f,0), a.GetPosition());
         }
     }
 }
