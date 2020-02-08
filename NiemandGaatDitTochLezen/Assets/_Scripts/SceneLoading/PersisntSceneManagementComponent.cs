@@ -16,10 +16,11 @@ public class PersisntSceneManagementComponent : MonoBehaviour
 
         if (instance != null)
         {
+            Debug.LogWarningFormat("More than one instance of PersisntSceneManagementComponent found! Second found on {0}", this.gameObject.name);
             Destroy(this.gameObject);
-            Debug.LogWarning("More than one instance of PersisntSceneManagementComponent found!");
             return;
         }
+        Debug.LogFormat("PersisntSceneManagementComponent found! found on {0}", this.gameObject.name);
         DontDestroyOnLoad(transform.gameObject);
         instance = this;
     }
