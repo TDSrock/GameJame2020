@@ -29,6 +29,7 @@ public class PersisntSceneManagementComponent : MonoBehaviour
 
     public AsyncSceneLoader sceneLoader;
     public string pathOfScene;
+    public President presidentToFire;
 
     // Use this for initialization
     void Start()

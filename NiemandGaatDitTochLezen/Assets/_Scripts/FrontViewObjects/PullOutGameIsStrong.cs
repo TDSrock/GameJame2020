@@ -27,13 +27,13 @@ public class PullOutGameIsStrong : AbstractFrontViewInteractive
 
     public override void OnClick()
     {
-        Debug.LogFormat("{0} was clicked", this.gameObject.name);
+        //Debug.LogFormat("{0} was clicked", this.gameObject.name);
         isClicked = true;
     }
 
     public override void OnRelease()
     {
-        Debug.LogFormat("{0} was released", this.gameObject.name);
+        //Debug.LogFormat("{0} was released", this.gameObject.name);
         isClicked = false;
     }
 }

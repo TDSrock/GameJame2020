@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public Vector3 Velocity { get { return moveDirection * moveSpeed; } }
-    public LayerMask interactionMask;
+    public LayerMask interactionMask, ingnoreForInteractionSearchMask;
     public KeyCode interactionKey = KeyCode.E;
     public float interactionRange = 3f;
     [Header("Interactable UI")]
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animat = GetComponent<Animator>();
+        ingnoreForInteractionSearchMask = ~ingnoreForInteractionSearchMask;
     }
 
     void Update()
@@ -53,11 +54,12 @@ public class PlayerController : MonoBehaviour
             RaycastHit hitInfo;
             if (interactable != null)
             {
-                Ray ray = new Ray(transform.position + new Vector3(0, 1f, 0), interactable.GetPosition() - transform.position);
-                if (Physics.Raycast(ray, out hitInfo, interactionRange))
-                {
-                    Debug.Log(interactable.GameObject.name + " " + hitInfo.collider.gameObject.name);
-                    if (interactable.GameObject == hitInfo.collider.gameObject || hitInfo.collider.gameObject.transform.IsChildOf(interactable.GameObject.transform))
+                Ray ray = new Ray(interactable.GetPosition() + new Vector3(0, .5f, 0), transform.position - interactable.GetPosition() + new Vector3(0, 1f, 0));
+                Debug.DrawRay(interactable.GetPosition() + new Vector3(0, .5f, 0), transform.position - interactable.GetPosition() + new Vector3(0, 1f, 0));
+                if (Physics.Raycast(ray, out hitInfo, interactionRange, ingnoreForInteractionSearchMask))
+                { 
+                    //Debug.Log(this.gameObject.name + " " + hitInfo.collider.gameObject.name + " " + (this.gameObject == hitInfo.collider.gameObject));
+                    if (this.gameObject == hitInfo.collider.gameObject)
                         interactables.Add(interactable);
                 }
             }
