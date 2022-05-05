@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
                 if (pres.isClean)
                 {
                     Debug.Log(pres.name + " is clean");
+                    if (PersisntSceneManagementComponent.instance)
+                        PersisntSceneManagementComponent.instance.presidentToFire = pres;
                     foreach (var doc in pres.whenCleanNotes)
                     {
                         LootableDocumentHolder place = lootables.RemoveRandom();
