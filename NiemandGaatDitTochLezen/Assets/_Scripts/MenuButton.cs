@@ -17,7 +17,8 @@ public class MenuButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //menu scene, turn on the cursor!
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

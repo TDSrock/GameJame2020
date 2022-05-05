@@ -12,7 +12,6 @@ namespace SjorsGielen.Extensions {
         /// <param name="list">The list</param>
         public static void Shuffle<T>(this IList<T> list)
         {
-            Random rng = new Random();
             int n = list.Count;
             while (n > 1)
             {

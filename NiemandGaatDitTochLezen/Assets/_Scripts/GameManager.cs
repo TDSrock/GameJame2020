@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
             {
                 if (pres.isClean)
                 {
+                    Debug.Log(pres.name + " is clean");
                     foreach (var doc in pres.whenCleanNotes)
                     {
                         LootableDocumentHolder place = lootables.RemoveRandom();

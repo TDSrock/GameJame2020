@@ -24,6 +24,9 @@ public class DialogueManager : MonoBehaviour {
 
 		//nameText.text = dialogue.name;
 
+		//turn on the cursor when a dialogue is started
+		Cursor.visible = true;
+
 		sentences.Clear();
 
 		foreach (Sentence sentence in dialogue.sentences)
@@ -66,6 +69,8 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+		Cursor.visible = false;
+		//on dialogue end hide the cursor again.
 	}
 
 }

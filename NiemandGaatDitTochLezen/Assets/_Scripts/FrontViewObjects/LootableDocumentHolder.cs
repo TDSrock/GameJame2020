@@ -31,7 +31,7 @@ public class LootableDocumentHolder : AbstractFrontViewInteractive
         //if search complete, pop up item, otherwise reset time searching
         if(timeSeaching >= timeToSearch)
         {
-            Debug.Log("OPEN DOCUMENT CODE HERE");
+            //Debug.Log("OPEN DOCUMENT CODE HERE");
             DocumentPickUpUI.Instance.OpenImageInteraction(document);
         }
 

@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
                 Ray ray = new Ray(transform.position + new Vector3(0, 1f, 0), interactable.GetPosition() - transform.position);
                 if (Physics.Raycast(ray, out hitInfo, interactionRange))
                 {
-                    Debug.Log(interactable.GameObject.name + " " + hitInfo.collider.gameObject.name);
+                    //Debug.Log(interactable.GameObject.name + " " + hitInfo.collider.gameObject.name);
                     if (interactable.GameObject == hitInfo.collider.gameObject || hitInfo.collider.gameObject.transform.IsChildOf(interactable.GameObject.transform))
                         interactables.Add(interactable);
                 }

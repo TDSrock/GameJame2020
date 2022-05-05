@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TargetManager : MonoBehaviour {
+public class TargetManager : MonoBehaviour
+{
     [SerializeField]
     private int currentIndex;
 
@@ -31,13 +32,15 @@ public class TargetManager : MonoBehaviour {
 
 
 
-  
 
-    void Start() {
+
+    void Start()
+    {
         killed = false;
         instances = new GameObject[prefabs.Length];
         float radius = 5f;
-        for (int i = 0; i < numObjects; i++) {
+        for (int i = 0; i < numObjects; i++)
+        {
             float angle = i * Mathf.PI * 2f / numObjects;
             Vector3 newPos = new Vector3(Camera.main.transform.position.x + Mathf.Cos(angle) * radius, 0, Camera.main.transform.position.z + Mathf.Sin(angle) * radius);
             GameObject go = Instantiate(prefabs[i], newPos, Quaternion.FromToRotation(Vector3.forward, Camera.main.transform.position - newPos), presidentParent.transform);
@@ -47,7 +50,8 @@ public class TargetManager : MonoBehaviour {
         selectedAnimator = instances[1].GetComponent<Animator>();
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (!killed)
         {
             if (Input.GetKeyDown(KeyCode.A))
@@ -101,21 +105,22 @@ public class TargetManager : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Application.Quit();
+                //load main menu
+                PersisntSceneManagementComponent.instance.LoadSceneWithLoadScreen("Menu");
             }
         }
-       
-
         Quaternion newRotation = Quaternion.Euler(0, rotationTarget, 0);
         presidentParent.transform.rotation = Quaternion.Lerp(presidentParent.transform.rotation, newRotation, Time.deltaTime * 2);
-
-      
     }
 
-    public void CheckAnswer() {
-        if (instances[currentIndex].GetComponent<CheckClean>().president.isClean) {
+    public void CheckAnswer()
+    {
+        if (instances[currentIndex].GetComponent<CheckClean>().president.isClean)
+        {
             correctText.gameObject.SetActive(true);
-        } else {
+        }
+        else
+        {
             wrongText.gameObject.SetActive(true);
         }
     }
