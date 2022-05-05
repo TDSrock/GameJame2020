@@ -38,14 +38,8 @@ public class TargetManager : MonoBehaviour
         killed = false;
         instances = new GameObject[prefabs.Length];
         float radius = 5f;
-<<<<<<< HEAD
-        for (int i = 0; i < numObjects; i++)
-        {
-            float angle = i * Mathf.PI * 2f / numObjects;
-=======
         for (int i = 0; i < prefabs.Length; i++) {
             float angle = i * Mathf.PI * 2f / prefabs.Length;
->>>>>>> 394cf2deeef9396501b228f0fad45fb8bf48616a
             Vector3 newPos = new Vector3(Camera.main.transform.position.x + Mathf.Cos(angle) * radius, 0, Camera.main.transform.position.z + Mathf.Sin(angle) * radius);
             GameObject go = Instantiate(prefabs[i], newPos, Quaternion.FromToRotation(Vector3.forward, Camera.main.transform.position - newPos), presidentParent.transform);
             instances[i] = go;
@@ -117,17 +111,6 @@ public class TargetManager : MonoBehaviour
         presidentParent.transform.rotation = Quaternion.Lerp(presidentParent.transform.rotation, newRotation, Time.deltaTime * 2);
     }
 
-<<<<<<< HEAD
-    public void CheckAnswer()
-    {
-        if (instances[currentIndex].GetComponent<CheckClean>().president.isClean)
-        {
-            correctText.gameObject.SetActive(true);
-        }
-        else
-        {
-            wrongText.gameObject.SetActive(true);
-=======
     public void CheckAnswer() {
         if (PersisntSceneManagementComponent.instance)
         {
@@ -139,7 +122,6 @@ public class TargetManager : MonoBehaviour
             {
                 wrongText.gameObject.SetActive(true);
             }
->>>>>>> 394cf2deeef9396501b228f0fad45fb8bf48616a
         }
         else
         {
